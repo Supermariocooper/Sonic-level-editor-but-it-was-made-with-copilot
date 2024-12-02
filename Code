@@ -1,0 +1,46 @@
+git clone https://github.com/your-username/SonicLevelEditor.git
+cd Sonic-Level-Editor-but-it-was-made-with-copilot
+
+python3 -m venv venv
+source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+pip install pygame
+
+import pygame
+import sys
+
+# Initialize Pygame
+pygame.init()
+
+# Screen dimensions
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption('Sonic Level Editor')
+
+# Colors
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+
+# Main loop
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+
+git add .
+git commit -m "Initial commit with basic editor setup"
+            running = False
+
+    # Clear screen
+    screen.fill(WHITE)
+
+    # Draw grid (example for level editing)
+    for x in range(0, SCREEN_WIDTH, 40):
+        pygame.draw.line(screen, BLACK, (x, 0), (x, SCREEN_HEIGHT))
+    for y in range(0, SCREEN_HEIGHT, 40):
+        pygame.draw.line(screen, BLACK, (0, y), (SCREEN_WIDTH, y))
+
+    pygame.display.flip()
+
+pygame.quit()
+sys.exit()
